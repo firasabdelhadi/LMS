@@ -52,7 +52,7 @@ frappe.pages['catalog'].on_page_load = function(wrapper) {
     </div>`).appendTo(page.main);
     
     $(`<div style="margin-bottom: 60px;">
-        <input type="text" id="book-search" placeholder="Search books...">
+        <input type="text" id="book-searchh" placeholder="Search books...">
         <button onclick="checkAvailability()">Check Availability</button>
         <div id="check-availability"></div>
     </div>`).appendTo(page.main);
@@ -155,7 +155,7 @@ function updateBook() {
 }
 
 function checkAvailability() {
-    var title = $('#book-search').val();
+    var title = $('#book-searchh').val();
 
     frappe.call({
         method: 'catalog.LMS.check_availability',

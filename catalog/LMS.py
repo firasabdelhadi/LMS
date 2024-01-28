@@ -80,7 +80,7 @@ def update_book(isbn, new_title, new_author, new_year):
 @frappe.whitelist()
 def check_availability(title):
     # Search  by title case sensitivity
-   #book = frappe.get_all('Book', filters={'title': title}, fields=['name'])
+    # book = frappe.get_all('Book', filters={'title': title}, fields=['name'])
 
     book = frappe.get_all('Book', filters={'title': ['like', '%' + title + '%']}, fields=['name'])
     
@@ -91,8 +91,20 @@ def check_availability(title):
 
 
 
+    
+# @frappe.whitelist()
+# def check_availability(title):
+#     # input title to lower case
+#     title_lower = title.lower()
 
+#     # fetching all books and add filter 
+#     all_books = frappe.get_all('Book', fields=['title'])
 
+#     for book in all_books:
+#         if book['title'].lower() == title_lower:
+#             return 'Book is available'
+
+#     return 'Book not available'
 
 
 

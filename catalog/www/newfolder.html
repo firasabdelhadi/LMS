@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/assets/catalog/css/newfolder.css">
+</head>
+<body>
+    <!-- {{book}} -->
+    <!-- {{catalog.title}}
+    {{catalog.author}}
+    {{catalog.year}}
+    {{catalog.isbn}} -->
+    {% for item in books %}
+        <TR>
+            {{item.title}}
+            {{item.author}}
+            {{item.year}}
+            {{item.isbn}}
+        </TR>
+    {% endfor %}
+</body>
+</html>

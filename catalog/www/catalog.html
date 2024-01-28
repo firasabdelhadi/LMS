@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Catalog</title>
+    <script src="/assets/catalog/js/catalog.js"></script>
+</head>
+<body>
+    <h2>Book Catalog</h2>
+    
+    <!--  adding a book -->
+    <form id="add-book-form">
+        <input type="text" id="book-title" placeholder="Title">
+        <input type="text" id="book-author" placeholder="Author">
+        <input type="text" id="book-year" placeholder="Year">
+        <input type="text" id="book-isbn" placeholder="ISBN">
+        <button type="button" onclick="addBook()">Add Book</button>
+    </form>
+
+    <!-- List of books -->
+    <div class="book-list">
+        {% for book in books %}
+            <p>Title: {{ book.title }}, Author: {{ book.author }}, Year: {{ book.year }}, ISBN: {{ book.isbn }}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
